@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wedding Studio | Invitation Designs</title>
+
+<meta name="description" content="Discover beautiful wedding invitation cards, video invitations and digital designs.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #8b4c65;
+    --dark: #292329;
+    --light: #fffaf8;
+    --muted: #777078;
+    --border: #eee5e5;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+header {
+    background: white;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark);
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.hero {
+    padding: 75px 6%;
+    text-align: center;
+    background: linear-gradient(135deg, #f8e9ed, #fffaf4);
+}
+
+.hero .tag {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(34px, 6vw, 58px);
+    line-height: 1.2;
+    margin: 18px auto;
+    max-width: 750px;
+}
+
+.hero p {
+    max-width: 550px;
+    margin: 0 auto 28px;
+    color: var(--muted);
+}
+
+.button {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 13px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.button-light {
+    background: white;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+section {
+    padding: 65px 6%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    padding: 9px 16px;
+    border: 1px solid var(--border);
+    background: white;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.product-art {
+    height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5e3e8, #fff7ed);
+    color: #754456;
+}
+
+.product-art span {
+    font-family: Georgia, serif;
+    font-size: 27px;
+}
+
+.art-2 {
+    background: linear-gradient(135deg, #e6e8d9, #faf4df);
+    color: #596448;
+}
+
+.art-3 {
+    background: linear-gradient(135deg, #f0e4d7, #fff9ef);
+    color: #8c6846;
+}
+
+.art-4 {
+    background: linear-gradient(135deg, #e9e0f2, #fff4f6);
+    color: #73578b;
+}
+
+.art-5 {
+    background: linear-gradient(135deg, #e3eaf0, #fff7ee);
+    color: #456278;
+}
+
+.art-6 {
+    background: linear-gradient(135deg, #f4e3d8, #f8e8ed);
+    color: #8b4c65;
+}
+
+.card-content {
+    padding: 18px;
+}
+
+.card-content h3 {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.card-content p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.card-content .button {
+    width: 100%;
+    text-align: center;
+}
+
+.custom {
+    background: #f5ecef;
+    text-align: center;
+}
+
+.custom h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.custom p {
+    color: var(--muted);
+    max-width: 550px;
+    margin: 0 auto 24px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.feature {
+    padding: 22px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.feature h3 {
+    margin-bottom: 8px;
+}
+
+.feature p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 6%;
+    background: white;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+}
+
+footer strong {
+    color: var(--primary);
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 16px 5%;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .hero {
+        padding: 60px 6%;
+    }
+
+    section {
+        padding: 48px 5%;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .product-art {
+        height: 155px;
+        padding: 10px;
+    }
+
+    .product-art span {
+        font-size: 22px;
+    }
+
+    .card-content {
+        padding: 12px;
+    }
+
+    .card-content h3 {
+        font-size: 14px;
+    }
+
+    .card-content p {
+        font-size: 12px;
+    }
+
+    .card-content .button {
+        padding: 10px 5px;
+        font-size: 12px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Wedding Studio</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#designs">Designs</a>
+        <a href="#custom">Custom Order</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+    <div class="tag">MADE FOR YOUR SPECIAL DAY</div>
+
+    <h1>Beautiful Invitations.<br>Unforgettable Memories.</h1>
+
+    <p>
+        Explore elegant wedding invitations, video cards
+        and creative digital designs made for your special moments.
+    </p>
+
+    <a href="#designs" class="button">Explore Designs</a>
+
+    <a href="#custom" class="button button-light">Custom Order</a>
+</section>
+
+<section id="designs">
+
+    <div class="section-heading">
+        <h2>Explore Our Collection</h2>
+        <p>Find the perfect design for your special occasion.</p>
+    </div>
+
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">All Designs</button>
+        <button class="filter-btn" data-filter="card">Wedding Cards</button>
+        <button class="filter-btn" data-filter="video">Video Cards</button>
+        <button class="filter-btn" data-filter="digital">CDR & PNG</button>
+    </div>
+
+    <div class="products">
+
+        <article class="card" data-category="card">
+            <div class="product-art">
+                <span>Shubh Vivah<br>॥ शुभ विवाह ॥</span>
+            </div>
+            <div class="card-content">
+                <h3>Traditional Wedding Card</h3>
+                <p>Elegant designs for your wedding invitation.</p>
+                <button class="button order-btn" data-product="Traditional Wedding Card">Enquire Now</button>
+            </div>
+        </article>
+
+        <article class="card" data-category="video">
+            <div class="product-art art-2">
+                <span>Wedding<br>Video Invitation</span>
+            </div>
+            <div class="card-content">
+                <h3>Video Wedding Card</h3>
+                <p>A beautiful invitation to share digitally.</p>
+                <button class="button order-btn" data-product="Video Wedding Card">Enquire Now</button>
+            </div>
+        </article>
+
+        <article class="card" data-category="digital">
+            <div class="product-art art-3">
+                <span>Premium<br>CDR Designs</span>
+            </div>
+            <div class="card-content">
+                <h3>CorelDRAW Designs</h3>
+                <p>Editable designs for printing professionals.</p>
+                <button class="button order-btn" data-product="CorelDRAW CDR Designs">Enquire Now</button>
+            </div>
+        </article>
+
+        <article class="card" data-category="digital">
+            <div class="product-art art-4">
+                <span>Creative<br>PNG Assets</span>
+            </div>
+            <div class="card-content">
+                <h3>PNG Design Assets</h3>
+                <p>Creative graphics for your design projects.</p>
+                <button class="button order-btn" data-product="PNG Design Assets">Enquire Now</button>
+            </div>
+        </article>
+
+        <article class="card" data-category="card">
+            <div class="product-art art-5">
+                <span>Modern<br>Invitation</span>
+            </div>
+            <div class="card-content">
+                <h3>Modern Wedding Card</h3>
+                <p>Clean and minimal invitation styles.</p>
+                <button class="button order-btn" data-product="Modern Wedding Card">Enquire Now</button>
+            </div>
+        </article>
+
+        <article class="card" data-category="video">
+            <div class="product-art art-6">
+                <span>Personalised<br>Wedding Story</span>
+            </div>
+            <div class="card-content">
+                <h3>Custom Video Invitation</h3>
+                <p>Personalised video invitations for couples.</p>
+                <button class="button order-btn" data-product="Custom Video Invitation">Enquire Now</button>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<section class="custom" id="custom">
+    <h2>Your Occasion, Your Design</h2>
+
+    <p>
+        Need a personalised wedding card or video invitation?
+        Share your requirements and let us help create something special.
+    </p>
+
+    <button class="button" id="custom-btn">Request a Custom Design</button>
+</section>
+
+<section>
+    <div class="section-heading">
+        <h2>Why Choose Us?</h2>
+        <p>Creative designs for your memorable occasions.</p>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <h3>Creative Designs</h3>
+            <p>Beautiful designs for different styles and occasions.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Personalised Orders</h3>
+            <p>Designs customised to your requirements.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Easy Ordering</h3>
+            <p>Contact us to discuss your design requirements.</p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p><strong>Wedding Studio</strong></p>
+    <p>Beautiful Designs for Your Special Moments.</p>
+    <p>© <span id="year"></span> Wedding Studio. All rights reserved.</p>
+</footer>
+
+<script>
+const buttons = document.querySelectorAll(".filter-btn");
+const cards = document.querySelectorAll(".card");
+
+buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        const filter = button.dataset.filter;
+
+        buttons.forEach(function(item) {
+            item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        cards.forEach(function(card) {
+            if (filter === "all" || card.dataset.category === filter) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function contactWhatsApp(product) {
+    const phone = "91YOURNUMBER";
+    const message = "Hello! I am interested in: " + product +
+        ". Please share more details.";
+
+    if (phone.includes("YOURNUMBER")) {
+        alert("WhatsApp number will be added after the website design is ready.");
+        return;
+    }
+
+    window.open(
+        "https://wa.me/" + phone + "?text=" + encodeURIComponent(message),
+        "_blank"
+    );
+}
+
+document.querySelectorAll(".order-btn").forEach(function(button) {
+    button.addEventListener("click", function() {
+        contactWhatsApp(button.dataset.product);
+    });
+});
+
+document.getElementById("custom-btn").addEventListener("click", function() {
+    contactWhatsApp("Custom Wedding Card or Video Invitation");
+});
+</script>
+
+</body>
+</html>
